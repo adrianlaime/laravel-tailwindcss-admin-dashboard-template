@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataFeedController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PlatosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::fallback(function() {
         return view('pages/utility/404');
-    });    
+    });  
+    
+    Route::get('/platos', [PlatosController::class, 'index'])->name('platos');
 });
